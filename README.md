@@ -13,8 +13,8 @@ Requirements:
 - Install docker-compose: [docker-compose installation guide on Linux servers](https://docs.docker.com/compose/install/other/#on-linux "Install docker-compose on Linux servers")
 - Clone this repository in your server:
 ```shell
-git clone ...
-cd ...
+git clone https://github.com/wc4680/v2ray-vmess-websocket-cdn.git
+cd v2ray-vmess-websocket-cdn
 ```
 - Apply kernel configuration:
 ```shell
