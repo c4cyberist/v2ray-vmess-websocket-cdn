@@ -1,6 +1,8 @@
 # VMESS(v2ray) over WebSocket + TLS behind CDN  via Tor with docker-compose
 By using this guide you can setup your own server to fight with internet censorship.
+
 The solution is a combination of a CDN network and a VM outside of the censored network that hosts the VMESS server.
+
 Users will use VMESS protocol over the WebSocket to connect to the CDN network and the CDN network will proxy the requests to your VM outside of the censored network.
 
 Requirements:
@@ -66,7 +68,9 @@ All CDN providers which offer websocket feature are suitable for this use case. 
 
 ## Client Configuration
 Different clients for different platforms already exist for you and your users to use.
+
 You can see a list of clients in this link: [v2ray clients](https://www.v2ray.com/en/awesome/tools.html "v2ray clients")
+
 In all of these clients you should configure these parameters:
 - Protocol: VMESS
 - Address: The subdomain that you have created in CDN
@@ -84,7 +88,9 @@ In all of these clients you should configure these parameters:
 If your CDN provider supports the "Domain Fronting" feature, you can change "Address" and "SNI" (if your client has it) to a domain that is served by the same CDN provider. In this case, DNS resolution and TLS hello messages will not reveal anything about your server. So it will be very difficult for internet censorship equipment to detect your traffic.
 
 For example:
+
 Assume that your subdomain is `myserver.mydomain.com` and `popularsite.com` is also hosted in the same CDN.
+
 You can check the domain fronting feature by running this command:
 ```shell
 curl -H 'Host: myserver.mydomain.com' https://popularsite.com/test.html
