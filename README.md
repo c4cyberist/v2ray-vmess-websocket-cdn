@@ -64,7 +64,8 @@ All CDN providers which offer websocket feature are suitable for this use case. 
 - Register your domain in the CDN provider panel
 - Create a subdomain (A record) in the DNS management section and assign the server IP to it
 - Activate CDN on the subdomain to send traffic to port 443 with the https protocol
-- Activate free SSL for your domain
+- Activate SSL for your domain
+- Force CDN edges to connect over https to your server
 
 ## Client Configuration
 Different clients for different platforms already exist for you and your users to use.
@@ -97,9 +98,17 @@ curl -H 'Host: myserver.mydomain.com' https://popularsite.com/test.html
 ```
 If you see this message in the output, domain fronting is supported on your CDN:
 ```
-Domain fronting is supported!
+Hello Freedom!
 ```
 So you can change client configuration as follow:
 - Address: popularsite.com
 - SNI: popularsite.com
 - Request Host: myserver.mydomain.com
+
+## Troubleshooting
+You must be able to get the content of `test.html` file over https:
+```shell
+curl https://myserver.mydomain.com/test.html
+Hello Freedom!
+```
+If you don't get the `Hello Freedom!` in output, please check CDN configuration. You should enable SSL on your domain and also you should force CDN provider to send requests over https to your server.
