@@ -112,3 +112,10 @@ curl https://myserver.mydomain.com/test.html
 Hello Freedom!
 ```
 If you don't get the `Hello Freedom!` in output, please check CDN configuration. You should enable SSL on your domain and also you should force CDN provider to send requests over https to your server.
+
+## Contribution and Support
+Feel free to submit your issues and comments in "Issues". I will try my best to help you.
+
+Your pull requests are welcome!
+
+Please be careful about your anonymity!
