@@ -1,4 +1,4 @@
-# VMESS(v2ray) over WebSocket + TLS behind CDN  via Tor with docker-compose
+# VMESS(v2ray) over WebSocket + TLS behind CDN (via Tor or direct) with docker-compose
 By using this guide you can setup your own server to fight with internet censorship.
 
 The solution is a combination of a CDN network and a VM outside of the censored network that hosts the VMESS server.
